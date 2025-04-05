@@ -43,6 +43,7 @@ The only other risk with file recovery tools, is whether they write to the drive
 
 
 
+
 ## Clarion 11 Dictionary File Signatures
 
 ### Leading 24 bytes
@@ -87,8 +88,9 @@ Valid PhotoRec signatures for the 'photorec.sig' file, but only use one signatur
 
 
 Valid OSForensics signature Header Pattern. OSForensics allows the use ? as a wild card, enabling a more accurate file signature.
+It has a 16digit character limit.
 
-?9E2080?C5B5??E819??9D50E9?0EB5?xB6DBCF
+?9E2080?C5B5??E8
 
 ### Trailing 24 bytes
 
@@ -111,7 +113,8 @@ Photorec does not support trailing signatures, instead relying on space on the h
 
 Valid OSForensics signature optional Footer Pattern.
 
-688E???????????????26??
+????????????26??
+?26??
 
 
 ## Clarion 11 Application File Signatures 
@@ -138,7 +141,7 @@ Valid PhotoRec signature for the 'photorec.sig' file.
 
 Valid OSForensics signature Header Pattern.
 
-686CD6B021594C49BAB7E9C4B135A335????????
+686CD6B021594C49
 
 
 ### Trailing 24 bytes
@@ -156,7 +159,7 @@ Photorec does not support trailing signatures.
 
 Valid OSForensics signature Footer Pattern.
 
-000000000000000000000000000000000000000000000000
+0000000000000000
 
 
 ## Clarion 11 Registry File Signatures 
@@ -181,7 +184,7 @@ Valid PhotoRec signature for the 'photorec.sig' file.
 
 Valid OSForensics signature Header Pattern.
 
-66CD6B021594C49BAB7E9C4B135A3350224F0DF2A5E9443
+66CD6B021594C49B
 
 
 ### Trailing 24 bytes
@@ -199,5 +202,27 @@ Photorec does not support trailing signatures.
 
 Valid OSForensics signature Footer Pattern.
 
-000000000000000000000000000000000000000000000000
+0000000000000000
 
+
+
+### PhotoRec.sig File
+
+The PhotoRec.sig file uses one file signature per line.
+More information can be found on their website.
+
+The format is:
+[File Extension any reasonable length] [Offset] [0xHex String]
+
+Copy the PhotoRec.Sig file into the folder where the EXE is run from.
+
+The process can take several hours to complete a single pass.
+
+
+### OSForensics Pattern Searchs.
+
+The Leading and optional Trailing Pattern Search can be add manually.
+Load the program, select Deleted File Search, click the blue Config... hyperlink right of the Scan button, click the Configure Carving Options button, click the Add button on the bottom left of the popup window, type in the file Extension, eg .App or .Dct or .Trf, then copy the leading search pattern/string into the Header pattern field, and the trailing search pattern/string into the Footer pattern (optional) field. As this is Hex a decimal, the search pattern are not Case Sensitive. 
+If you know the spin disk is rather full and has not been defragged or defragged recently, its best to leave the Max Fike Size as is, if you know the Spin disk is not rather full and/or has been Defragged recently, if you know the maximum file size in bytes for the file extension you are hoping to recover, adjust the Maximum file size accordingly leaving a few extra KB's to help improve the odds of recovery. If you also know an empty file will never be smaller than a certain size in Bytes, also add this. If you dont succeed in recovery the required files, you can experiment with the Base Score on Header match option. Its default is 50%, which is suitable where a trailing search pattern is also specified, but if you dont have a trailing search pattern, consider increasing this to something like 75 to increase the pertinence of the leading search pattern.
+
+The process can take several hours to complete a single pass, but deselecting other file signatures can speed things up a bit.
