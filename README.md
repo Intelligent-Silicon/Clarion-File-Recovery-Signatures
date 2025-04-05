@@ -4,7 +4,13 @@
 Using two forensic file recovery programs PhotoRec [1] and OSForensics [2] to recover Clarion App, Dct and Trf file's because they have at least a leading file signature and sometimes a trailing file signature which makes it easier to recover using File Carvers, programs which use File Carving [3] to recover files off storage mediums like spin disks.
 Source code files, CLW, INC, INT, TPW and TPL are pure ascii text files with no file signatures, which make it very difficult to recover unless using a raw storage medium scanner that shows the hex in sectors, where it would be possible to recover with human intervention aka known as a manual recovery.  
 
-Chip based storage like (micro)SD card, USB sticks, SSD drives and NVMe drives are a little less reliable due to the volatile nature of memory chips but are still worth attempting a file recovery from. Chip based storage like (micro)SD cards and others employ a technique called wear levelling [4] which needs to be accounted for. If you want to know more about (micro) SD cards, I would highly recommend reading Bunnie:Studio's for a break down on SD cards and also how to spot fake SD cards. For an example of how spin disks can be hacked I would recommend reading SpriteMods. 
+Chip based storage like (micro)SD card, USB sticks, SSD drives and NVMe drives are a little less reliable due to the volatile nature of memory chips but are still worth attempting a file recovery from. Chip based storage like (micro)SD cards and others employ a technique called wear levelling [4] which needs to be accounted for. If you want to know more about (micro) SD cards, I would highly recommend reading Bunnie:Studio's for a break down on SD cards and also how to spot fake SD cards. I myself have been able to purchase fake USB sticks of Amazon, where they report a larger storage capacity than what they can actually store. For an example of how spin disks can be hacked I would recommend reading SpriteMods.
+
+When formatting a storage medium, there is a debate over whether to use smaller sector sizes or larger sector sizes. Performance of Spin disks is improved with larger sector sizes, chip based storage is best set to match what the storage controller chips reports as best. Provided the storage medium is not routinely filled up and then files deleted, the sector size doesnt really matter, but if using a spin disk to generate code on, a smaller sector size is preferable to aid recovery of source files which have no file signature. This is because smaller files like Clarion source files fit in their own sector with the rest of the sector remaining empty and larger files will span the next aka contiguous sector(s), leaving empty space in the last sector the file occupies. Where it gets harder to recover is when Windows is forced to break up a file and use the spare space in a sector and its at this point that Defragging software will help to keep files spanning as few a sector as possible. Defragging spin disks routinely will always help with file recovery, simply by keeping files spanning sectors contiguous. Likewise purchasing larger hard disks is preferable to reduce the risk from disk failure and the subsequent extra work spent recovery files manually by reading the raw hex on the hard drive, using specialist tools like OSForensics.
+
+Raid [7] , is designed to limit the fallout when a hard drive fails in whole or part. Raid 5 is currently the best, but in a worst case scenerio, the need to understand how Raid methods works makes file recovery a more difficult task, and eliminates simple File Carving tools like PhotoRec, and requires more specialist tools which give access to the raw hard drives. When the hard drive controllers fail, data recovery companies, will remove the Spin/Hard disk drive platter [8] , and slot them into one of their own matching drives where the hard drive controller is known to work, in order to read the data off. Other techniques may also exist today. 
+
+When choosing a Hex Editor to read the contents of a file, HxD is a free and highly recommended Hex Editor and Disk Editor. It doesnt change the hex when copying to other tools like text editors. The addon/plugin Hex Editor [10] for Notepad++ [11] will change/encode the hex when copying and pasting to another text document in NPP, so be warned, if choosing to use it to view files in Hex.
 
 
 [1] https://www.cgsecurity.org/wiki/photoRec
@@ -18,6 +24,21 @@ Chip based storage like (micro)SD card, USB sticks, SSD drives and NVMe drives a
 [5] https://www.bunniestudios.com/blog/2012/microsd-card-faq/
 
 [6] https://spritesmods.com/?art=hddhack
+
+[7] https://en.wikipedia.org/wiki/RAID
+
+[8] https://en.wikipedia.org/wiki/Hard_disk_drive_platter
+
+[9] https://mh-nexus.de/en/hxd/
+
+[10] https://github.com/chcg/NPP_HexEdit
+
+[11] https://notepad-plus-plus.org/
+
+
+
+
+
 
 
 ## Clarion 11 Dictionary File Signatures
@@ -84,7 +105,7 @@ aa has an offset of 18 from the file end.
 
 bb has an offset of 2
 
-Photorec does not support trailing signatures, instead relying on space on the hard drive sector(s) or another file signature to terminate the existing file.
+Photorec does not support trailing signatures, instead relying on space on the hard drive sector(s)/cluster(s) or another file signature to terminate the existing file. 
 
 Valid OSForensics signature optional Footer Pattern.
 
