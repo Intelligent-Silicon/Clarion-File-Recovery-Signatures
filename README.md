@@ -111,7 +111,7 @@ bb has an offset of 2
 
 Photorec does not support trailing signatures, instead relying on space on the hard drive sector(s)/cluster(s) or another file signature to terminate the existing file. 
 
-Valid OSForensics signature optional Footer Pattern.
+Valid OSForensics signature optional Footer Pattern starting from the right most character moving left.
 
 ????????????26??
 
