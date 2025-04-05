@@ -114,6 +114,7 @@ Photorec does not support trailing signatures, instead relying on space on the h
 Valid OSForensics signature optional Footer Pattern.
 
 ????????????26??
+
 ?26??
 
 
