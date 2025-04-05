@@ -217,7 +217,7 @@ The format is:
 
 Copy the PhotoRec.Sig file into the folder where the EXE is run from.
 
-The process can take several hours to complete a single pass.
+The process can take several hours to complete.
 
 
 ### OSForensics Pattern Searchs.
@@ -226,4 +226,4 @@ The Leading and optional Trailing Pattern Search can be add manually.
 Load the program, select Deleted File Search, click the blue Config... hyperlink right of the Scan button, click the Configure Carving Options button, click the Add button on the bottom left of the popup window, type in the file Extension, eg .App or .Dct or .Trf, then copy the leading search pattern/string into the Header pattern field, and the trailing search pattern/string into the Footer pattern (optional) field. As this is Hex a decimal, the search pattern are not Case Sensitive. 
 If you know the spin disk is rather full and has not been defragged or defragged recently, its best to leave the Max Fike Size as is, if you know the Spin disk is not rather full and/or has been Defragged recently, if you know the maximum file size in bytes for the file extension you are hoping to recover, adjust the Maximum file size accordingly leaving a few extra KB's to help improve the odds of recovery. If you also know an empty file will never be smaller than a certain size in Bytes, also add this. If you dont succeed in recovery the required files, you can experiment with the Base Score on Header match option. Its default is 50%, which is suitable where a trailing search pattern is also specified, but if you dont have a trailing search pattern, consider increasing this to something like 75 to increase the pertinence of the leading search pattern.
 
-The process can take several hours to complete a single pass, but deselecting other file signatures can speed things up a bit.
+The process can take several hours to complete, deselecting other file signatures can speed things up a bit.
