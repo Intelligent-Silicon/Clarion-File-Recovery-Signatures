@@ -2,7 +2,7 @@
 
 ## Overview
 Using two forensic file recovery programs PhotoRec [1] and OSForensics [2] to recover Clarion App, Dct and Trf file's because they have at least a leading file signature and sometimes a trailing file signature which makes it easier to recover using File Carvers, programs which use File Carving [3] to recover files off storage mediums like spin disks.
-Source code files, CLW, INC, INT, TPW and TPL are pure ascii text files with no file signatures, which make it very difficult to recover unless using a raw storage medium scanner that shows the hex in sectors, where it would be possible to recover with human intervention aka known as a manual recovery.  
+Source code files, CLW, INC, INT, TPW and TPL are pure ascii text files with no file signatures as are most other programming tools and their source code files, which make it very difficult to recover unless using a raw storage medium scanner that shows the hex in sectors, where it would be possible to recover with human intervention aka known as a manual recovery.  
 
 Chip based storage like (micro)SD card, USB sticks, SSD drives and NVMe drives are a little less reliable due to the volatile nature of memory chips but are still worth attempting a file recovery from. Chip based storage like (micro)SD cards and others employ a technique called wear levelling [4] which needs to be accounted for. If you want to know more about (micro) SD cards, I would highly recommend reading Bunnie:Studio's for a break down on SD cards and also how to spot fake SD cards. I myself have been able to purchase fake USB sticks of Amazon, where they report a larger storage capacity than what they can actually store. For an example of how spin disks can be hacked I would recommend reading SpriteMods.
 
