@@ -49,7 +49,8 @@ The only other risk with file recovery tools, is whether they write to the drive
 ### Leading 24 bytes
 
 Three Example Clarion 11 Dictionary Files: 
-  
+
+```  
    aa aa aa    bb bb       cc cc       dd dd dd    ee ee    ff ff ff
    
 88 9E 20 80 AB C5 B5 76 90 E8 19 0C 3D 9D 50 E9 AD 0E B5 46 B6 DB CF A6
@@ -57,7 +58,7 @@ Three Example Clarion 11 Dictionary Files:
 80 9E 20 80 AF C5 B5 D4 8C E8 19 0C 7F 9D 50 E9 EF 0E B5 48 B6 DB CF BE
 
 8C 9E 20 80 AB C5 B5 E6 8C E8 19 8C 3F 9D 50 E9 A7 0E B5 48 B6 DB CF 86
-
+```
 
 aa has an offset of 1 from the file start.
 
@@ -96,6 +97,7 @@ It has a 16digit character limit.
 
 Three Example Clarion 11 Dictionary Files:
 
+```
             aa aa                                              bb
 			
 44 7B 61 F2 68 8E DF 67 3C BD 3B FD 86 30 10 97 5E 60 8C 9E 98 26 50 CB
@@ -103,7 +105,7 @@ Three Example Clarion 11 Dictionary Files:
 44 7B 61 F2 68 8E DF 67 3C BD 3B FD 86 30 10 97 5E 60 8C 9E 98 26 50 CB
 
 24 2C E2 62 68 8E 1F AE BC FE 0C 1B 8C 10 20 9F 5C 80 EB 0A 88 26 70 CF
-
+```
 
 aa has an offset of 18 from the file end.
 
@@ -124,6 +126,7 @@ Valid OSForensics signature optional Footer Pattern starting from the right most
 
 Three Example Clarion 11 App Files:
 
+```
 aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
  
 68 6C D6 B0 21 59 4C 49 BA B7 E9 C4 B1 35 A3 35 DE 66 C5 A1 B1 3D 37 4D
@@ -131,7 +134,7 @@ aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
 68 6C D6 B0 21 59 4C 49 BA B7 E9 C4 B1 35 A3 35 3D 4C 1C D5 63 80 44 4B
  
 68 6C D6 B0 21 59 4C 49 BA B7 E9 C4 B1 35 A3 35 00 00 00 00 00 00 00 00
- 
+``` 
 
 aa has an offset of 0 from the file start.
 
@@ -149,12 +152,13 @@ Valid OSForensics signature Header Pattern.
 
 Three Example Clarion 11 App Files:
 
+```
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-
+```
 
 Photorec does not support trailing signatures.
 
@@ -169,12 +173,13 @@ Valid OSForensics signature Footer Pattern.
 
 Two Example Clarion 11 Registry Files:
 
+```
 aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
 
 68 6C D6 B0 21 59 4C 49 BA B7 E9 C4 B1 35 A3 35 02 24 F0 DF 2A 5E 94 43
 
 68 6C D6 B0 21 59 4C 49 BA B7 E9 C4 B1 35 A3 35 02 24 F0 DF 2A 5E 94 43
-
+```
 
 aa has an offset of 0 from the file start.
 
@@ -191,8 +196,8 @@ Valid OSForensics signature Header Pattern.
 ### Trailing 24 bytes
 
 Two Example Clarion 11 Registry Files:
-```
 
+```
 aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
