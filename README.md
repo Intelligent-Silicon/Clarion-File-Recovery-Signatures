@@ -74,7 +74,8 @@ ff has an offset of 20
 
 
 Valid PhotoRec signatures for the 'photorec.sig' file, but only use one signature in the 'photorec.sig' file.
- 
+
+``` 
 11dct_aa_sig 1 0x9E2080	
 	
 11dct_bb_sig 5 0xC5B5
@@ -86,12 +87,14 @@ Valid PhotoRec signatures for the 'photorec.sig' file, but only use one signatur
 11dct_ee_sig 17 0x0EB5
 		
 11dct_ff_sig 20 0xB6DBCF
-
+```
 
 Valid OSForensics signature Header Pattern. OSForensics allows the use ? as a wild card, enabling a more accurate file signature.
 It has a 16digit character limit.
 
+```
 ?9E2080?C5B5??E8
+```
 
 ### Trailing 24 bytes
 
@@ -115,10 +118,11 @@ Photorec does not support trailing signatures, instead relying on space on the h
 
 Valid OSForensics signature optional Footer Pattern starting from the right most character moving left.
 
+```
 ????????????26??
 
 ?26??
-
+```
 
 ## Clarion 11 Application File Signatures 
 
@@ -140,13 +144,15 @@ aa has an offset of 0 from the file start.
 
 Valid PhotoRec signature for the 'photorec.sig' file.
 
+```
 11app_aa_sig 1 0x686CD6B021594C49BAB7E9C4B135A335
-
+```
 
 Valid OSForensics signature Header Pattern.
 
+```
 686CD6B021594C49
-
+```
 
 ### Trailing 24 bytes
 
@@ -164,8 +170,9 @@ Photorec does not support trailing signatures.
 
 Valid OSForensics signature Footer Pattern.
 
+```
 0000000000000000
-
+```
 
 ## Clarion 11 Registry File Signatures 
 
@@ -185,13 +192,15 @@ aa has an offset of 0 from the file start.
 
 Valid PhotoRec signature for the 'photorec.sig' file.
 
+```
 11trf_aa_sig 1 0x66CD6B021594C49BAB7E9C4B135A3350224F0DF2A5E9443
-
+```
 
 Valid OSForensics signature Header Pattern.
 
+```
 66CD6B021594C49B
-
+```
 
 ### Trailing 24 bytes
 
@@ -210,8 +219,9 @@ Photorec does not support trailing signatures.
 
 Valid OSForensics signature Footer Pattern.
 
+```
 0000000000000000
-
+```
 
 
 ### PhotoRec.sig File
@@ -220,7 +230,10 @@ The PhotoRec.sig file uses one file signature per line.
 More information can be found on their website.
 
 The format is:
+
+```
 [File Extension any reasonable length] [Offset] [0xHex String]
+```
 
 Copy the PhotoRec.Sig file into the folder where the EXE is run from.
 
